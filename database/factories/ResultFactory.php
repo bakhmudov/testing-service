@@ -3,8 +3,8 @@
 namespace Database\Factories;
 
 use App\Models\Result;
-use App\Models\Student;
 use App\Models\Test;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -21,11 +21,10 @@ class ResultFactory extends Factory
     public function definition(): array
     {
         return [
-            'student_id' => Student::factory(),
             'test_id' => Test::factory(),
-            'completion_time' => $this->faker->numberBetween(1, 30),
-            'correct_answers' => $this->faker->numberBetween(1, 10),
-            'total_points' => $this->faker->numberBetween(1, 100),
+            'user_id' => User::factory(),
+            'score' => $this->faker->numberBetween(0, 100),
+            'completed_at' => $this->faker->dateTime,
         ];
     }
 }

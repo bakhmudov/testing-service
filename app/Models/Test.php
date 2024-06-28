@@ -4,29 +4,26 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Test extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['discipline_id', 'title', 'description', 'total_time', 'enrolled_students'];
+    protected $fillable = ['title', 'description', 'total_time', 'topic_id'];
 
-    public function discipline()
+    public function topic(): BelongsTo
     {
-        return $this->belongsTo(Discipline::class, 'discipline_id');
+        return $this->belongsTo(Topic::class);
     }
 
-    public function questions()
+    public function questions(): HasMany
     {
         return $this->hasMany(Question::class);
     }
 
-    public function reviews()
-    {
-        return $this->hasMany(Review::class);
-    }
-
-    public function results()
+    public function results(): HasMany
     {
         return $this->hasMany(Result::class);
     }

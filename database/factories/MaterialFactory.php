@@ -2,18 +2,14 @@
 
 namespace Database\Factories;
 
-use App\Models\Discipline;
-use App\Models\Test;
 use App\Models\Topic;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Test>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Material>
  */
-class TestFactory extends Factory
+class MaterialFactory extends Factory
 {
-    protected $model = Test::class;
-
     /**
      * Define the model's default state.
      *
@@ -24,8 +20,7 @@ class TestFactory extends Factory
         return [
             'topic_id' => Topic::factory(),
             'title' => $this->faker->sentence,
-            'description' => $this->faker->paragraph,
-            'total_time' => $this->faker->numberBetween(30, 120), // время в минутах
+            'content' => $this->faker->paragraph,
         ];
     }
 }

@@ -2,16 +2,14 @@
 
 namespace Database\Factories;
 
-use App\Models\Discipline;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Discipline>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Message>
  */
-class DisciplineFactory extends Factory
+class MessageFactory extends Factory
 {
-    protected $model = Discipline::class;
-
     /**
      * Define the model's default state.
      *
@@ -20,7 +18,9 @@ class DisciplineFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->word,
+            'sender_id' => User::factory(),
+            'receiver_id' => User::factory(),
+            'content' => $this->faker->sentence,
         ];
     }
 }

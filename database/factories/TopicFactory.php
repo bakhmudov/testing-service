@@ -6,12 +6,10 @@ use App\Models\Discipline;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Discipline>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Topic>
  */
-class DisciplineFactory extends Factory
+class TopicFactory extends Factory
 {
-    protected $model = Discipline::class;
-
     /**
      * Define the model's default state.
      *
@@ -20,6 +18,7 @@ class DisciplineFactory extends Factory
     public function definition(): array
     {
         return [
+            'discipline_id' => Discipline::factory(),
             'name' => $this->faker->word,
         ];
     }

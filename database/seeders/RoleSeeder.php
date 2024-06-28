@@ -32,6 +32,7 @@ class RoleSeeder extends Seeder
         $studentRole = Role::create(['name' => 'student']);
         $studentRole->givePermissionTo(['view materials', 'view tests', 'take tests']);
 
-
+        // Создание временной роли "unverified" без прав
+        Role::create(['name' => 'unverified']);
     }
 }

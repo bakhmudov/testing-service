@@ -13,12 +13,9 @@ return new class extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('test_id')->constrained('tests');
+            $table->foreignId('test_id')->constrained('tests')->onDelete('cascade');
             $table->text('content');
-            $table->text('question_type');
-            $table->json('answers');
-            $table->json('correct_answers');
-            $table->text('explanation')->nullable();
+            $table->string('question_type');
             $table->integer('points');
             $table->timestamps();
         });

@@ -4,20 +4,21 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Result extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['student_id', 'test_id', 'completion_time', 'correct_answers', 'total_points'];
+    protected $fillable = ['score', 'completed_at', 'test_id', 'user_id'];
 
-    public function student()
+    public function test(): BelongsTo
     {
-        return $this->belongsTo(Student::class, 'student_id');
+        return $this->belongsTo(Test::class);
     }
 
-    public function test()
+    public function user(): BelongsTo
     {
-        return $this->belongsTo(Test::class, 'test_id');
+        return $this->belongsTo(User::class);
     }
 }

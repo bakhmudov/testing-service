@@ -21,11 +21,8 @@ class QuestionFactory extends Factory
     {
         return [
             'test_id' => Test::factory(),
-            'content' => $this->faker->paragraph,
-            'question_type' => $this->faker->word,
-            'answers' => json_encode([$this->faker->word, $this->faker->word, $this->faker->word]),
-            'correct_answers' => json_encode([$this->faker->word]),
-            'explanation' => $this->faker->paragraph,
+            'content' => $this->faker->sentence,
+            'question_type' => $this->faker->randomElement(['single-choice', 'multiple-choice', 'text']),
             'points' => $this->faker->numberBetween(1, 10),
         ];
     }
