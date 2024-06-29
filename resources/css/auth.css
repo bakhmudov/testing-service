@@ -1,0 +1,26 @@
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('/images/background.jpg'); /* Путь к вашему фоновому изображению */
+    background-size: cover;
+    background-position: center;
+}
+
+.auth-card {
+    background: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.auth-card h2 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    font-weight: 600;
+}

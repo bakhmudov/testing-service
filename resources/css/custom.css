@@ -1,0 +1,89 @@
+/* resources/css/custom.css */
+
+html, body {
+    background-color: #f8fafc;
+    /*color: #636b6f;*/
+    color: #ffffff;
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    font-weight: 200;
+    height: 100vh;
+    margin: 0;
+}
+
+.full-height {
+    height: 100vh;
+}
+
+.flex-center {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.position-ref {
+    position: relative;
+}
+
+.top-right {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+}
+
+.content {
+    text-align: center;
+}
+
+.title {
+    font-size: 84px;
+}
+
+.links > a {
+    color: #ffffff;
+    padding: 9px 25px;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 2px solid rgba(37, 37, 37, 0.18); /* Добавляем черную рамку */
+    border-radius: 5px; /* Немного скругляем углы */
+    transition: all 0.4s ease; /* Плавный переход при наведении */
+}
+
+.links > a:hover {
+    background-color: rgba(0, 0, 0, 0.65); /* Заполняем фон черным цветом при наведении */
+    color: #ffffff; /* Меняем цвет текста на белый */
+}
+
+.m-b-md {
+    margin-bottom: 30px;
+}
+
+.background-image {
+    background-image: url('../../public/images/hero_image.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*filter: blur(1px);*/
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.welcome-text {
+    position: relative;
+    z-index: 1;
+}

@@ -13,6 +13,13 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     {{ __("You're logged in as a teacher!") }}
                 </div>
+
+                <div class="p-6 text-gray-900 dark:text-gray-100">
+                    <a class="bg-blue-500 hover:bg-green-700 text-white font-bold py-1 px-3 rounded-lg"
+                       href="{{ route('teacher.materials.index') }}">{{ __('Учебные материалы') }}</a>
+                    <a class="bg-blue-500 hover:bg-green-700 text-white font-bold py-1 px-3 rounded-lg"
+                       href="{{ route('teacher.tests.index') }}">{{ __('Тесты') }}</a>
+                </div>
             </div>
         </div>
     </div>
